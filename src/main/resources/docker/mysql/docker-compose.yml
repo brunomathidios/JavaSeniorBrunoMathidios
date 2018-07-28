@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  colaboradores:
+    container_name: colaboradores_mysql
+    image: mysql
+    restart: always
+    ports:
+      - '3306:3306'
+    environment:
+      - MYSQL_ROOT_PASSWORD=colab123
+      - MYSQL_DATABASE=colaboradores
+      - MYSQL_USER=colab
+      - MYSQL_PASSWORD=colab321
+    volumes:
+      - "./init:/docker-entrypoint-initdb.d"
+      
+#docker-compose up
+
+#docer exec -it colaboradores_mysql bash
+
+#mysql -u colab -p
+#colab321
+
+#use colaboradores;
